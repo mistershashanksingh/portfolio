@@ -16,7 +16,8 @@
     --second-bg-color: #f0f4f6;
     --text-color: #333;
     --main-color: #df3b6f;
-    --shadow-color: rgba(0, 0, 0, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.268);
+    --hover-color: rgba(255, 210, 218, 0.89);
 }
 
 .dark-mode
@@ -24,7 +25,8 @@
     --bg-color: #0b061f;
     --second-bg-color: #0c0721;
     --text-color: #fdfdfd;
-    --shadow-color: rgba(255, 255, 255, 0.7);
+    --shadow-color: rgba(207, 207, 207, 0.7);
+    --hover-color: #33313bda;
 }
 
 html
@@ -37,7 +39,7 @@ body
 {
     background: var(--bg-color);
     color: var(--text-color);
-    transition: 1s;
+    transition: 1.3s;
 }
 
 body::-webkit-scrollbar
@@ -58,7 +60,6 @@ body::-webkit-scrollbar
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    transition: .5s;
 }
 
 .header.sticky
@@ -125,9 +126,14 @@ body::-webkit-scrollbar
     font-size: 2.4rem;
     color: var(--text-color);
     cursor: pointer;
-    transition: 1s;
+    transition: transform .7s ease-in-out, color 0.8s ease-in-out;
 }
-
+  
+#darkMode-icon.bx-sun 
+{
+   transform: rotate(180deg);
+}
+  
 .menu-icon
 {
     font-size: 3.6rem;
@@ -492,7 +498,7 @@ span{
 
 #i-1
 {
-    margin-top: 75px;
+    margin-top: 100px;
     margin-left: 200px;
 }
 
@@ -543,9 +549,7 @@ span{
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    background: var(--bg-color);
     padding: 6rem;
-    transition: 1.4s; 
 }
 
 .heading
@@ -566,7 +570,7 @@ span{
     justify-content: center;
     align-items: center;
     margin-bottom: 5rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 .about-img img
@@ -604,4 +608,247 @@ span{
 .btn-box.btn a::before
 {
     background: var(--second-bg-color);
+}
+
+/* <!-- Education && Experiance section --> */
+
+.education
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+}
+
+.education .education-row
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.education .education-column
+{
+    flex: 1 1 40rem;
+}
+
+.education-column .title
+{
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
+}
+
+.education-column .education-box
+{
+    border-left: .2rem solid var(--main-color);
+
+}
+
+.education-box .education-content
+{
+    position: relative;
+    padding-left: 2rem;
+
+}
+
+.education-box .education-content::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.1rem;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 4.2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+
+.education-content .content
+{
+    position: relative;
+    padding: 1.5rem;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+}
+
+.education-content .content::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--hover-color);
+    overflow: hidden;
+    z-index: -1;
+    transition: .5s;
+}
+
+.education-content .content:hover::before
+{
+    width: 100%;
+}
+
+.education-content .content .year
+{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.education-content .content .year i
+{
+    padding-right: .5rem;
+
+}
+
+.education-content .content h3
+{
+    font-size: 2rem;
+}
+
+.education-content .content p
+{
+    font-size: 1.6rem;
+}
+
+/* <!-- Skills Section --> */
+
+.skills
+{
+    min-height: auto;
+    padding-bottom: 7rem;
+}
+
+.skills .skills-row
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.skills-row .skills-column
+{
+    flex: 1 1 40rem;
+}
+
+.skills-column .title
+{
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+}
+
+.skills-box .skills-content
+{
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+}
+
+.skills-box .skills-content::before
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--hover-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.skills-box .skills-content:hover::before
+{
+    width: 0;
+}
+
+.skills-content .progress
+{
+    padding: 1rem 0;
+}
+
+.skills-content .progress h3
+{
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-content .progress h3 span
+{
+    color: var(--text-color);
+}
+
+.skills-content .progress .bar 
+{
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+
+.skills-content .progress .bar span
+{
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span
+{
+    width: 90%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span
+{
+    width: 90%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span
+{
+    width: 90%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span
+{
+    width: 90%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span
+{
+    width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span
+{
+    width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span
+{
+    width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span
+{
+    width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span
+{
+    width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span
+{
+    width: 90%;
 }
