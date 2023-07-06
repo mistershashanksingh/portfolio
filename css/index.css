@@ -12,18 +12,18 @@
 
 :root {
     --bg-color: #fdfdfd;
-    --second-bg-color: #f0f4f6;
+    --second-bg-color: #d8dbdc;
     --text-color: #333;
     --main-color: #df3b6f;
-    --shadow-color: rgba(0, 0, 0, 0.268);
-    --hover-color: rgba(255, 210, 218, 0.89);
+    --shadow-color: #00000044;
+    --hover-color: #ffd2dae3;
 }
 
 .dark-mode {
     --bg-color: #0b061f;
-    --second-bg-color: #0c0721;
+    --second-bg-color: #1d1931;
     --text-color: #fdfdfd;
-    --shadow-color: rgba(207, 207, 207, 0.7);
+    --shadow-color: #cfcfcfb3;
     --hover-color: #33313bda;
 }
 
@@ -81,17 +81,9 @@ body::-webkit-scrollbar {
     margin-right: 3.5rem;
 }
 
-.header.sticky .navbar a {
-    color: var(--text-color);
-}
-
-.header.sticky .navbar a.active {
-    color: var(--main-color);
-}
-
 .navbar a:hover {
-    transition: .4s;
-    color: rgb(187, 187, 187);
+    transition: .5s;
+    color: var(--text-color)
 }
 
 .navbar a.active::before {
@@ -102,6 +94,19 @@ body::-webkit-scrollbar {
     width: 100%;
     height: .2rem;
     background: var(--bg-color);
+}
+
+.header.sticky .navbar a {
+    color: var(--text-color);
+}
+
+.header.sticky .navbar a:hover {
+    color:#969696;
+    z-index: 100;
+}
+
+.header.sticky .navbar a.active {
+    color: var(--main-color);
 }
 
 .header.sticky .navbar a::before {
@@ -810,18 +815,20 @@ section {
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 100%;
     background: var(--hover-color);
     border-radius: .6rem;
     z-index: -1;
-    transition: .5s;
+    transition: .6s;
 }
 
-/* .contact form .input-box .input-field input:focus~.focus,
-.contact form .input-box .input-field input:valid~.focus {
-    width: 100%;
-} */
+.contact form .input-box .input-field input:focus~.focus,
+.contact form .input-box .input-field input:valid~.focus,
+.contact form .textarea-field textarea:focus~.focus,
+.contact form .textarea-field textarea:valid~.focus {
+    height: 0;
+}
 
 .contact form .textarea-field {
     position: relative;
@@ -835,4 +842,57 @@ section {
 
 .contact form .btn-box.btns .btn {
     cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+/* <!-- footer design --> */
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.footer-iconTop a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--hover-color);
+    z-index: -1;
+    transition: .6s;
+}
+
+.footer-iconTop a:hover::before {
+    top: 0;
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--bg-color);
+    transition: .6s;
+}
+
+.footer-iconTop a:hover i {
+    color: var(--main-color);
 }
