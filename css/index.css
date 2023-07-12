@@ -11,20 +11,20 @@
 }
 
 :root {
-    --bg-color: #fdfdfd;
-    --second-bg-color: #d8dbdc;
+    --bg-color: #dcc3ff;
+    --second-bg-color: #d1aae3;
     --text-color: #333;
     --main-color: #df3b6f;
     --shadow-color: #00000044;
-    --hover-color: #ffd2dae3;
+    --hover-color: #e5d2ffe3;
 }
 
 .dark-mode {
-    --bg-color: #0b061f;
-    --second-bg-color: #1d1931;
+    --bg-color: #0d0626;
+    --second-bg-color: #1f1b34;
     --text-color: #fdfdfd;
     --shadow-color: #cfcfcfb3;
-    --hover-color: #33313bda;
+    --hover-color: #3e3951da;
 }
 
 html {
@@ -76,14 +76,14 @@ body::-webkit-scrollbar {
 .navbar a {
     position: relative;
     font-size: 1.7rem;
-    color: var(--second-bg-color);
+    color: var(--text-color);
     font-weight: 300;
     margin-right: 3.5rem;
 }
 
 .navbar a:hover {
     transition: .5s;
-    color: var(--text-color)
+    color: var(--main-color)
 }
 
 .navbar a.active::before {
@@ -93,7 +93,7 @@ body::-webkit-scrollbar {
     bottom: -6px;
     width: 100%;
     height: .2rem;
-    background: var(--bg-color);
+    background: var(--main-color);
 }
 
 .header.sticky .navbar a {
@@ -102,7 +102,7 @@ body::-webkit-scrollbar {
 
 .header.sticky .navbar a:hover {
     color: #969696;
-    transition: 1s;
+    transition: .6s;
     z-index: 100;
 }
 
@@ -336,7 +336,7 @@ section {
     height: 100%;
 }
 
- 
+
 /* ----------------------------------------------------About section--------------------------------------------------- */
 
 .about {
@@ -761,5 +761,100 @@ section {
 @media (max-width: 991px) {
     .home .home-content {
         max-width: 50rem;
+    }
+
+    .contact {
+        min-height: auto;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 920px) {
+    #menu-icon {
+        display: block;
+        transition: transform 0.5s ease-in-out, color 0.8s ease-in-out;
+    }
+
+    #menu-icon.bx-x {
+        transform: skewY(180deg);
+    }
+
+    #darkMode-icon {
+        position: absolute;
+        right: 7rem;
+        font-size: 2.6rem;
+        color: var(--text-color);
+        margin-bottom: 0.1rem;
+        transition: color 0.5s ease-in-out;
+    }
+
+    .bx-menu-alt-right {
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+      
+      .bx-x {
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+    .navbar {
+        position: absolute;
+        left: 40%;
+        top: 100%;
+        width: 100%;
+        padding: 1rem 3%;
+        background: transparent;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0.5rem 1rem solid rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        display: none;
+        overflow: hidden;
+        animation: slide-in 0.3s ease-in-out;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+
+    .navbar a {
+        display: block;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 3rem;
+        margin: 3rem 0;
+        left: 0;
+        color: var(--text-color);
+        transition: .4s;
+        /* Animation */
+        animation: slide-in 0.5s ease-in-out;
+    }
+
+    .navbar a:nth-child(1),
+    .navbar a:nth-child(2) {
+        color: var(--text-color);
+    }
+
+    .navbar a.active {
+        color: var(--main-color);
+    }
+
+    .navbar a::before {
+        display: none;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }
