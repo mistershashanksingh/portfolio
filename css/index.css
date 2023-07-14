@@ -66,11 +66,15 @@ body::-webkit-scrollbar {
 .logo {
     color: var(--text-color);
     font-size: 2.5rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 900;
+    letter-spacing: .5px;
     cursor: default;
     margin-right: auto;
+    font-family: 'Courier New';
+}
 
+.logo span{
+    font-family: 'Courier New';
 }
 
 .navbar a {
@@ -129,13 +133,6 @@ body::-webkit-scrollbar {
 #menu-icon {
     font-size: 3.6rem;
     color: var(--text-color);
-    display: none;
-}
-
-.menu-icon {
-    font-size: 3.6rem;
-    color: var(--text-color);
-    cursor: pointer;
     display: none;
 }
 
@@ -264,15 +261,16 @@ section {
 .home-content .social-media a::before {
     content: '';
     position: absolute;
-    left: 0;
+    right: 0;
     height: 0;
-    width: 100%;
+    width: 0;
     background: var(--main-color);
     z-index: -1;
-    transition: .5s;
+    transition: .2s ease-in-out;
 }
 
 .home-content .social-media a:hover::before {
+    width: 100%;
     height: 100%;
 }
 
@@ -307,19 +305,6 @@ section {
     color: var(--main-color);
 }
 
-.btn-box .btn:nth-child(2) {
-    background: transparent;
-    color: var(--main-color);
-}
-
-.btn-box .btn:nth-child(2):hover {
-    color: var(--bg-color);
-}
-
-.btn-box .btn:nth-child(2)::before {
-    background: var(--main-color);
-}
-
 .btn-box .btn::before {
     content: '';
     position: absolute;
@@ -335,7 +320,6 @@ section {
 .btn-box .btn:hover::before {
     height: 100%;
 }
-
 
 /* ----------------------------------------------------About section--------------------------------------------------- */
 
@@ -372,7 +356,6 @@ section {
     border-radius: 10%;
     border: transparent;
     box-shadow: 0 .1rem .5rem .1rem var(--text-color);
-    ;
     background: var(--main-color);
 
 }
@@ -774,87 +757,107 @@ section {
 
 @media (max-width: 920px) {
     #menu-icon {
-        display: block;
-        transition: transform 0.5s ease-in-out, color 0.8s ease-in-out;
+      display: block;
+      transition: transform 0.5s ease-in-out, color 0.8s ease-in-out;
     }
-
+  
     #menu-icon.bx-x {
-        transform: skewY(180deg);
+      transform: skewY(180deg);
     }
-
+  
     #darkMode-icon {
-        position: absolute;
-        right: 7rem;
-        font-size: 2.6rem;
-        color: var(--text-color);
-        margin-bottom: 0.1rem;
-        transition: color 0.5s ease-in-out;
+      position: absolute;
+      right: 7rem;
+      font-size: 2.6rem;
+      color: var(--text-color);
+      margin-bottom: 0.1rem;
+      transition: transform .7s ease-in-out, color 0.8s ease-in-out;
     }
-
+  
+    #darkMode-icon.bx-sun {
+      transform: rotate(180deg);
+    }
+  
     .bx-menu-alt-right {
-        color: #fff;
-        font-size: 2rem;
-        cursor: pointer;
-      }
-      
-      .bx-x {
-        color: #fff;
-        font-size: 2rem;
-        cursor: pointer;
-      }
-
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  
+    .bx-x {
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  
     .navbar {
-        position: absolute;
-        left: 40%;
-        top: 100%;
-        width: 100%;
-        padding: 1rem 3%;
-        background: transparent;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 0.5rem 1rem solid rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        display: none;
-        overflow: hidden;
-        animation: slide-in 0.3s ease-in-out;
+      position: absolute;
+      left: 40%;
+      top: 100%;
+      width: 100%;
+      padding: 1rem 3%;
+      background: transparent;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0.5rem 1rem solid rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      display: none;
+      overflow: hidden;
+      animation: slide-in 0.3s ease-in-out;
+      box-shadow: 0 .1rem .5rem .1rem var(--text-color);
     }
-
+  
     .navbar.active {
-        display: block;
+      display: block;
+      animation: slide-in-active 0.3s ease-in-out;
     }
-
-
+  
     .navbar a {
-        display: block;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 3rem;
-        margin: 3rem 0;
-        left: 0;
-        color: var(--text-color);
-        transition: .4s;
-        /* Animation */
-        animation: slide-in 0.5s ease-in-out;
+      display: block;
+      font-family: 'Courier New';
+      font-size: 3rem;
+      margin: 3rem 0;
+      left: 0;
+      color: var(--text-color);
+      transition: .4s;
+      /* Animation */
+      animation: slide-in 0.5s ease-in-out;
     }
-
+  
     .navbar a:nth-child(1),
     .navbar a:nth-child(2) {
-        color: var(--text-color);
+      color: var(--text-color);
     }
-
+  
     .navbar a.active {
-        color: var(--main-color);
+      color: var(--main-color);
     }
-
+  
     .navbar a::before {
-        display: none;
+      display: none;
     }
-}
-
-@keyframes slide-in {
+  }
+  
+  @keyframes slide-in {
     0% {
-        transform: translateX(100%);
+      transform: translateX(100%);
     }
-
+  
     100% {
-        transform: translateX(0);
+      transform: translateX(0);
     }
-}
+  }
+  
+  @keyframes slide-in-active {
+    0% {
+      transform: translateX(100%);
+    }
+  
+    50% {
+      transform: translateX(-5%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
