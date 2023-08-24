@@ -51,4 +51,21 @@ darkModeIcon.onclick = () => {
     document.body.classList.toggle('dark-mode')
 }
 
+let homeImg = document.querySelector('.home-img img');
 
+let isDarkMode = false;
+
+darkModeIcon.onclick = () => {
+    isDarkMode = !isDarkMode;
+    darkModeIcon.classList.toggle('bx-sun');
+    document.body.classList.toggle('dark-mode');
+    updateImage();
+}
+
+function updateImage() {
+    if (isDarkMode) {
+        homeImg.src = 'img/developer.svg';
+    } else {
+        homeImg.src = 'img/developer-dark.svg';
+    }
+}

@@ -11,12 +11,12 @@
 }
 
 :root {
-    --bg-color: #dcc3ff;
-    --second-bg-color: #d1aae3;
+    --bg-color: #c3cfff;
+    --second-bg-color: #aabce3;
     --text-color: #333;
-    --main-color: #df3b6f;
+    --main-color: #3b75df;
     --shadow-color: #00000044;
-    --hover-color: #e5d2ffe3;
+    --hover-color: #d2e4ffe3;
 }
 
 .dark-mode {
@@ -137,7 +137,7 @@ body::-webkit-scrollbar {
 }
 
 span {
-    color: #bf1c50;
+    color: #1c63bf;
 }
 
 section {
@@ -320,6 +320,15 @@ section {
 .btn-box .btn:hover::before {
     height: 100%;
 }
+
+.home-img img{
+    position: static;
+    width: 60rem;
+    height: 60rem;
+    margin-bottom: 9rem;
+    max-width: 100%;
+}
+
 
 /* ----------------------------------------------------About section--------------------------------------------------- */
 
@@ -727,7 +736,7 @@ section {
     html {
         font-size: 55%;
     }
-
+    
 }
 
 @media (max-width: 1024px) {
