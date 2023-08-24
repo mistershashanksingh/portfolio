@@ -75,13 +75,13 @@ function updateImage() {
 
 ScrollReveal({
     reset: true,
-    distance: '80px',
+    distance: '15px',
     duration: 2000,
     delay: 200
 });
 
-ScrollReveal().reveal('.home-content, .heading, .navbar, .bx, .footer',{origin: 'top'})
-ScrollReveal().reveal('.home-img, .about-img, .contact',{origin: 'bottom'})
-ScrollReveal().reveal('.logo, .home-content h2, .progress span',{origin: 'left'})
-ScrollReveal().reveal('.education-content, .about-content',{origin: 'right'})
+ScrollReveal().reveal('.home-content, .heading, .footer', { origin: 'top' })
+ScrollReveal().reveal('.home-img, .about-img, .contact', { origin: 'bottom' })
+ScrollReveal().reveal('.home-content h2, .progress span', { origin: 'left' })
+ScrollReveal().reveal('.education-content, .about-content', { origin: 'right' })
 

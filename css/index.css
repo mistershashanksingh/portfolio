@@ -848,63 +848,64 @@ section {
     }
 }
 
-@media(max-width: 920px){
-    .home{
+@media(max-width: 920px) {
+    .home {
         padding: 0 3% 23rem;
         justify-content: center;
         text-align: center;
         margin-top: 10rem;
     }
-    
-    .home-content h1{
+
+    .home-content h1 {
         font-size: 5rem;
     }
 
-    .home-content .social-media{
+    .home-content .social-media {
         margin: 2.5rem .75rem 3rem;
     }
 
-    .home-content .btn-box{
+    .home-content .btn-box {
         margin: 2.5rem .75rem 3rem;
         margin-left: 7rem;
     }
 
-    .home-img{
+    .home-img {
         display: none;
     }
 }
 
-@media (max-width: 420px){
-    html{
+@media (max-width: 420px) {
+    html {
         font-size: 50%;
     }
 
-    .home{
+    .home {
         padding: 0 3% 30rem;
     }
 
-    .home-img{
+    .home-img {
         display: none;
     }
 
-    .footer{
+    .footer {
         flex-direction: column-reverse;
     }
 
-    .footer p{
+    .footer p {
         text-align: center;
         margin-top: 2rem;
     }
 }
 
-@media (max-width: 375px){
+@media (max-width: 375px) {
     .btn-box {
         display: block;
         padding-right: 5rem;
     }
 
     .btn-box .btn {
-        margin-bottom: 2rem; /* Adjust the value as needed for the desired gap */
+        margin-bottom: 2rem;
+        /* Adjust the value as needed for the desired gap */
     }
 
 }
