@@ -13,7 +13,7 @@
 :root {
     --bg-color: #c3cfff;
     --second-bg-color: #aabce3;
-    --text-color: #333;
+    --text-color: #313762;
     --main-color: #3b75df;
     --shadow-color: #00000044;
     --hover-color: #d2e4ffe3;
@@ -73,7 +73,7 @@ body::-webkit-scrollbar {
     font-family: 'Courier New';
 }
 
-.logo span{
+.logo span {
     font-family: 'Courier New';
 }
 
@@ -171,13 +171,15 @@ section {
 }
 
 .home-content .text-animate h3 {
+    display: block;
     font-size: 3.4rem;
     font-weight: 800;
     color: transparent;
-    -webkit-text-stroke: .7px var(--main-color);
+    -webkit-text-stroke: 0.7px var(--main-color);
     background-image: linear-gradient(var(--main-color), var(--main-color));
     background-repeat: no-repeat;
     -webkit-background-clip: text;
+    background-clip: text;
     background-position: 0 0;
     animation: homeBgText 6s linear infinite;
     animation-delay: 2s;
@@ -321,7 +323,7 @@ section {
     height: 100%;
 }
 
-.home-img img{
+.home-img img {
     position: static;
     width: 60rem;
     height: 60rem;
@@ -736,7 +738,7 @@ section {
     html {
         font-size: 55%;
     }
-    
+
 }
 
 @media (max-width: 1024px) {
@@ -766,107 +768,167 @@ section {
 
 @media (max-width: 920px) {
     #menu-icon {
-      display: block;
-      transition: transform 0.5s ease-in-out, color 0.8s ease-in-out;
+        display: block;
+        transition: transform 0.5s ease-in-out, color 0.8s ease-in-out;
     }
-  
+
     #menu-icon.bx-x {
-      transform: skewY(180deg);
+        transform: skewY(180deg);
     }
-  
+
     #darkMode-icon {
-      position: absolute;
-      right: 7rem;
-      font-size: 2.6rem;
-      color: var(--text-color);
-      margin-bottom: 0.1rem;
-      transition: transform .7s ease-in-out, color 0.8s ease-in-out;
+        position: absolute;
+        right: 7rem;
+        font-size: 2.6rem;
+        color: var(--text-color);
+        margin-bottom: 0.1rem;
+        transition: transform .7s ease-in-out, color 0.8s ease-in-out;
     }
-  
+
     #darkMode-icon.bx-sun {
-      transform: rotate(180deg);
+        transform: rotate(180deg);
     }
-  
+
     .bx-menu-alt-right {
-      color: #fff;
-      font-size: 2rem;
-      cursor: pointer;
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
     }
-  
+
     .bx-x {
-      color: #fff;
-      font-size: 2rem;
-      cursor: pointer;
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
     }
-  
+
     .navbar {
-      position: absolute;
-      left: 40%;
-      top: 100%;
-      width: 100%;
-      padding: 1rem 3%;
-      background: transparent;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0.5rem 1rem solid rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      display: none;
-      overflow: hidden;
-      animation: slide-in 0.3s ease-in-out;
-      box-shadow: 0 .1rem .5rem .1rem var(--text-color);
+        position: absolute;
+        left: 40%;
+        top: 100%;
+        width: 100%;
+        padding: 1rem 3%;
+        background: transparent;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0.5rem 1rem solid rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        display: none;
+        overflow: hidden;
+        animation: slide-in 0.3s ease-in-out;
+        box-shadow: 0 .1rem .5rem .1rem var(--text-color);
     }
-  
+
     .navbar.active {
-      display: block;
-      animation: slide-in-active 0.3s ease-in-out;
+        display: block;
+        animation: slide-in-active 0.3s ease-in-out;
     }
-  
+
     .navbar a {
-      display: block;
-      font-family: 'Courier New';
-      font-size: 3rem;
-      margin: 3rem 0;
-      left: 0;
-      color: var(--text-color);
-      transition: .4s;
-      /* Animation */
-      animation: slide-in 0.5s ease-in-out;
+        display: block;
+        font-family: 'Courier New';
+        font-size: 3rem;
+        margin: 3rem 0;
+        left: 0;
+        color: var(--text-color);
+        transition: .4s;
+        /* Animation */
+        animation: slide-in 0.5s ease-in-out;
     }
-  
+
     .navbar a:nth-child(1),
     .navbar a:nth-child(2) {
-      color: var(--text-color);
+        color: var(--text-color);
     }
-  
+
     .navbar a.active {
-      color: var(--main-color);
+        color: var(--main-color);
     }
-  
+
     .navbar a::before {
-      display: none;
+        display: none;
     }
-  }
-  
-  @keyframes slide-in {
+}
+
+@media(max-width: 920px){
+    .home{
+        padding: 0 3% 23rem;
+        justify-content: center;
+        text-align: center;
+        margin-top: 10rem;
+    }
+    
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-content .social-media{
+        margin: 2.5rem .75rem 3rem;
+    }
+
+    .home-content .btn-box{
+        margin: 2.5rem .75rem 3rem;
+        margin-left: 7rem;
+    }
+
+    .home-img{
+        display: none;
+    }
+}
+
+@media (max-width: 420px){
+    html{
+        font-size: 50%;
+    }
+
+    .home{
+        padding: 0 3% 30rem;
+    }
+
+    .home-img{
+        display: none;
+    }
+
+    .footer{
+        flex-direction: column-reverse;
+    }
+
+    .footer p{
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 375px){
+    .btn-box {
+        display: block;
+        padding-right: 5rem;
+    }
+
+    .btn-box .btn {
+        margin-bottom: 2rem; /* Adjust the value as needed for the desired gap */
+    }
+
+}
+
+@keyframes slide-in {
     0% {
-      transform: translateX(100%);
+        transform: translateX(100%);
     }
-  
+
     100% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
-  
-  @keyframes slide-in-active {
+}
+
+@keyframes slide-in-active {
     0% {
-      transform: translateX(100%);
+        transform: translateX(100%);
     }
-  
+
     50% {
-      transform: translateX(-5%);
+        transform: translateX(-5%);
     }
-  
+
     100% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
-  
+}
