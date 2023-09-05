@@ -249,7 +249,7 @@ section {
     border: .2rem solid var(--main-color);
     border-radius: 25%;
     box-shadow: 0 .2rem .5rem var(--shadow-color);
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--main-color);
     overflow: hidden;
     transition: 0.5;
@@ -268,7 +268,7 @@ section {
     width: 0;
     background: var(--main-color);
     z-index: -1;
-    transition: .2s ease-in-out;
+    transition: .1s ease-in-out;
 }
 
 .home-content .social-media a:hover::before {
@@ -339,14 +339,14 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 2rem;
-    padding: 6rem;
+    gap: 1rem;
+    padding: 3rem;
 }
 
 .heading {
     font-size: 5rem;
     font-weight: 800;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -358,8 +358,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5rem;
-    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
 }
 
 .about-img img {
@@ -527,6 +527,8 @@ section {
     transition: .5s;
 }
 
+
+
 .skills-box .skills-content:hover::before {
     width: 0;
 }
@@ -545,6 +547,12 @@ section {
     color: var(--text-color);
 }
 
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+}
+
 .skills-content .progress .bar {
     height: 2.5rem;
     border-radius: .6rem;
@@ -558,26 +566,28 @@ section {
     height: 100%;
     border-radius: .3rem;
     background: var(--main-color);
+    animation: progressAnimation 3s ease-in-out;
 }
+
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
     width: 90%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
-    width: 90%;
+    width: 80%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
-    width: 90%;
+    width: 60%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
-    width: 90%;
+    width: 70%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span {
-    width: 90%;
+    width: 30%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span {
@@ -769,7 +779,7 @@ section {
 @media (max-width: 920px) {
     #menu-icon {
         display: block;
-        transition: transform 0.5s ease-in-out, color 0.8s ease-in-out;
+        transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
     #menu-icon.bx-x {
@@ -782,7 +792,7 @@ section {
         font-size: 2.6rem;
         color: var(--text-color);
         margin-bottom: 0.1rem;
-        transition: transform .7s ease-in-out, color 0.8s ease-in-out;
+        transition: transform .7s cubic-bezier(0.215, 0.610, 0.355, 1), color 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
     #darkMode-icon.bx-sun {
@@ -796,7 +806,7 @@ section {
     }
 
     .bx-x {
-        color: #fff;
+        color: #ffffff;
         font-size: 2rem;
         cursor: pointer;
     }
@@ -808,18 +818,19 @@ section {
         width: 100%;
         padding: 1rem 3%;
         background: transparent;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(25px);
         box-shadow: 0 0.5rem 1rem solid rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
+        border-radius: 5px;
         display: none;
         overflow: hidden;
-        animation: slide-in 0.3s ease-in-out;
+        animation: slide-in-active 2s cubic-bezier(0.075, 0.82, 0.165, 1);;
         box-shadow: 0 .1rem .5rem .1rem var(--text-color);
     }
 
     .navbar.active {
         display: block;
-        animation: slide-in-active 0.3s ease-in-out;
+        animation: slide-in-active 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
     }
 
     .navbar a {
@@ -831,7 +842,7 @@ section {
         color: var(--text-color);
         transition: .4s;
         /* Animation */
-        animation: slide-in 0.5s ease-in-out;
+        animation: slide-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .navbar a:nth-child(1),
@@ -846,9 +857,7 @@ section {
     .navbar a::before {
         display: none;
     }
-}
 
-@media(max-width: 920px) {
     .home {
         padding: 0 3% 23rem;
         justify-content: center;

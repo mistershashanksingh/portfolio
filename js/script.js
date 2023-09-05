@@ -37,22 +37,16 @@ window.onscroll = () => {
     let header = document.querySelector('.header');
 
     header.classList.toggle('sticky', window.scrollY > 100)
-
+    
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active')
 
 };
 
 //---------------color mode(dark & light)--------------
+
 let darkModeIcon = document.querySelector('#darkMode-icon');
-
-darkModeIcon.onclick = () => {
-    darkModeIcon.classList.toggle('bx-sun');
-    document.body.classList.toggle('dark-mode')
-}
-
 let homeImg = document.querySelector('.home-img img');
-
 let isDarkMode = false;
 
 darkModeIcon.onclick = () => {
@@ -60,7 +54,7 @@ darkModeIcon.onclick = () => {
     darkModeIcon.classList.toggle('bx-sun');
     document.body.classList.toggle('dark-mode');
     updateImage();
-}
+};
 
 function updateImage() {
     if (isDarkMode) {
@@ -70,18 +64,21 @@ function updateImage() {
     }
 }
 
+// Rest of your code...
+
 
 //---------------scroll reveal--------------
 
-ScrollReveal({
+// Initialize ScrollReveal
+const scrollReveal = ScrollReveal({
     reset: true,
     distance: '15px',
-    duration: 2000,
-    delay: 200
+    duration: 2700,
+    delay: 450,
 });
 
 ScrollReveal().reveal('.home-content, .heading, .footer', { origin: 'top' })
-ScrollReveal().reveal('.home-img, .about-img, .contact', { origin: 'bottom' })
-ScrollReveal().reveal('.home-content h2, .progress span', { origin: 'left' })
+ScrollReveal().reveal('.home-img, .about-img, .contact, .skills-row', { origin: 'bottom' })
+ScrollReveal().reveal('.home-content h2,', { origin: 'left' })
 ScrollReveal().reveal('.education-content, .about-content', { origin: 'right' })
 
