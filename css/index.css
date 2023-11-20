@@ -165,72 +165,42 @@ section {
     font-size: 3.5rem;
 }
 
-.home-content .text-animate {
+.home-content .container {
     position: relative;
-    width: 32.8rem;
+    width: 50rem;
 }
 
-.home-content .text-animate h3 {
-    display: block;
+.container{
     font-size: 3.4rem;
     font-weight: 800;
-    color: transparent;
-    -webkit-text-stroke: 0.7px var(--main-color);
-    background-image: linear-gradient(var(--main-color), var(--main-color));
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-position: 0 0;
-    animation: homeBgText 6s linear infinite;
-    animation-delay: 2s;
 }
 
-.home-content .text-animate h3::before {
-    content: '';
+.container .first {
+    color: var(--text-color);
+}
+
+.container .second{
+    position: relative;
+}
+
+.home-content .container .second::before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    border-right: 2px solid var(--main-color);
-    z-index: -1;
-    animation: homeCursorText 6s linear infinite;
-    animation-delay: 2s;
+    height: 30px;
+    width: 2px;
+    top: 50%;
+    right: -8px;
+    background: var(--text-color);
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
 }
 
-@keyframes homeBgText {
-
-    0%,
-    10%,
-    100% {
-        background-position: -33rem 0;
-    }
-
-    65%,
-    85% {
-        background-position: 0 0;
-    }
+.container .second.stop-blinking::before {
+    animation: none;
 }
 
-@keyframes homeCursorText {
-
-    0%,
-    10%,
-    100% {
-        width: 0;
-    }
-
-    65%,
-    78%,
-    85% {
-        width: 100%;
-        opacity: 1;
-    }
-
-    75%,
-    81% {
-        opacity: 0;
-    }
+@keyframes blink {
+    50% { opacity: 0 }
 }
 
 .home-content p {
@@ -379,9 +349,16 @@ section {
     font-size: 2.6rem;
 }
 
-.about-content p {
+.about-content .expandable-paragraph {
     font-size: 1.7rem;
     margin: 2rem 0 3rem;
+    overflow: hidden;
+    max-height: 2rem;
+    transition: max-height; 
+}
+
+.about-content .expandable-paragraph.expanded {
+    max-height: none;
 }
 
 .btn-box.btns {
@@ -392,6 +369,11 @@ section {
 .btn-box.btn a::before {
     background: var(--second-bg-color);
 }
+
+.read-more.expanded {
+    text-decoration: wavy;
+    color: var(--primary-color);
+  }
 
 /* <!-- Education && Experiance section --> */
 
@@ -571,44 +553,44 @@ section {
 
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
-    width: 90%;
+    width: 50%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
-    width: 80%;
-}
-
-.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
     width: 60%;
 }
 
-.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
+.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
     width: 70%;
 }
 
-.skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span {
-    width: 30%;
+.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
+    width: 50%;
 }
 
+/* .skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span {
+    width: 30%;
+} */
+
 .skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span {
-    width: 90%;
+    width: 60%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span {
-    width: 90%;
+    width: 80%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span {
-    width: 90%;
+    width: 40%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span {
-    width: 90%;
+    width: 30%;
 }
-
+/* 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span {
     width: 90%;
-}
+} */
 
 
 /* <!-- Contact section --> */
@@ -823,7 +805,8 @@ section {
         border-radius: 5px;
         display: none;
         overflow: hidden;
-        animation: slide-in-active 2s cubic-bezier(0.075, 0.82, 0.165, 1);;
+        animation: slide-in-active 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        ;
         box-shadow: 0 .1rem .5rem .1rem var(--text-color);
     }
 
