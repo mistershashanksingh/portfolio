@@ -15,6 +15,7 @@
     --second-bg-color: #aabce3;
     --text-color: #313762;
     --main-color: #3b75df;
+    --main-shadow-color: #1954ca52;
     --shadow-color: #00000044;
     --hover-color: #d2e4ffe3;
 }
@@ -23,6 +24,7 @@
     --bg-color: #0d0626;
     --second-bg-color: #1f1b34;
     --text-color: #fdfdfd;
+    --main-shadow-color: #3b75df52;
     --shadow-color: #cfcfcfb3;
     --hover-color: #3e3951da;
 }
@@ -48,7 +50,6 @@ body::-webkit-scrollbar {
     left: 0;
     width: 100%;
     padding: 2rem 7%;
-    /* background: #1f0e20; */
     background: transparent;
     display: flex;
     justify-content: space-between;
@@ -441,10 +442,11 @@ section {
     left: 0;
     width: 0;
     height: 100%;
-    background: var(--hover-color);
+    background: var(--main-shadow-color);
     overflow: hidden;
     z-index: -1;
     transition: .5s;
+    filter: blur(40px);
 }
 
 .education-content .content:hover::before {
@@ -506,16 +508,12 @@ section {
     top: 0;
     width: 100%;
     height: 100%;
-    background: var(--hover-color);
+    background:var(--main-shadow-color);
     z-index: -1;
     transition: .5s;
+    filter: blur(90px);
 }
 
-
-
-.skills-box .skills-content:hover::before {
-    width: 0;
-}
 
 .skills-content .progress {
     padding: 1rem 0;
@@ -646,10 +644,11 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--hover-color);
+    background: var(--main-shadow-color);
     border-radius: .6rem;
     z-index: -1;
     transition: .6s;
+    filter: blur(50px);
 }
 
 .contact form .input-box .input-field input:focus~.focus,
@@ -673,16 +672,17 @@ section {
     cursor: pointer;
 }
 
+/* <!-- footer design --> */
 .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding: 2rem 9%;
+    margin-bottom: -1cm;
     background: var(--second-bg-color);
 }
 
-/* <!-- footer design --> */
 .footer-text p {
     font-size: 1.6rem;
 }
@@ -707,7 +707,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--hover-color);
+    background: var(--main-shadow-color);
     z-index: -1;
     transition: .6s;
 }
