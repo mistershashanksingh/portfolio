@@ -803,12 +803,12 @@ section {
         padding: 1rem 3%;
         background: transparent;
         backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
         box-shadow: 0 0.5rem 1rem solid rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         display: none;
         overflow: hidden;
         animation: slide-in-active 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-        ;
         box-shadow: 0 .1rem .5rem .1rem var(--text-color);
     }
 
